@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>抽油机井防冲距确定方法</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery-1.12.0.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <div class="list-group col-xs-12">
+        <div href="#" class="list-group-item active col-xs-12">
+            抽油机井防冲距确定方法
+        </div>
+        <div class="list-group-item col-xs-3">
+            <div class="list-group-item">
+                <label for="c">泵径</label>
+                <input class="form-control" type="text" id="c" placeholder="请输入泵径（mm）"/>
+            </div>
+            <div class="list-group-item">
+                <label for="d">泵深</label>
+                <input class="form-control" type="text" id="d" placeholder="请输入泵深（m）"/>
+            </div>
+            <div class="list-group-item">
+                <label for="e">冲程</label>
+                <input class="form-control" type="text" id="e" placeholder="请输入冲程（m）"/>
+            </div>
+            <div class="list-group-item">
+                <label for="f">冲次</label>
+                <input class="form-control" type="text" id="f" placeholder="请输入冲次（/min）"/>
+            </div>
+        </div>
+        <div class="list-group-item col-xs-3">
+            <div class="list-group-item">
+                <label for="g">杆长 25杆</label>
+                <input class="form-control" type="text" id="g" placeholder="请输入杆长 25杆（m）"/>
+            </div>
+            <div class="list-group-item">
+                <label for="h">杆长 22杆</label>
+                <input class="form-control" type="text" id="h" placeholder="请输入杆长 22杆（m）"/>
+            </div>
+            <div class="list-group-item">
+                <label for="i">杆长 19杆</label>
+                <input class="form-control" type="text" id="i" placeholder="请输入杆长 19杆（m）"/>
+            </div>
+			<div class="list-group-item">
+                <label for="a">杆长 38杆</label>
+                <input class="form-control" type="text" id="a" placeholder="请输入杆长 38杆（m）"/>
+            </div>
+        </div>
+        <div class="list-group-item col-xs-3">
+            <div class="list-group-item">
+                <label for="j">油管直径 外径</label>
+                <input class="form-control" type="text" id="j" placeholder="请输入油管直径 外径（mm）"/>
+            </div>
+            <div class="list-group-item">
+                <label for="k">油管直径 内径</label>
+                <input class="form-control" type="text" id="k" placeholder="请输入油管直径 内径（mm）"/>
+            </div>
+            <div class="list-group-item">
+                <label for="l">含水</label>
+                <input class="form-control" type="text" id="l" placeholder="请输入含水"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="m">杆长</label>
+                <input class="form-control" type="text" id="m" readonly placeholder="杆长（m）"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="n">原油密度</label>
+                <input class="form-control" type="text" id="n" value="0.85" readonly placeholder="原油密度"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="o">钢密度</label>
+                <input class="form-control" type="text" id="o" value="7.85" readonly placeholder="钢密度"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="p">混合液密度</label>
+                <input class="form-control" type="text" id="p" readonly placeholder="混合液密度"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="q">弹性模量</label>
+                <input class="form-control" type="text" id="q" value="205800000000" readonly placeholder="弹性模量"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="r">泵截面积</label>
+                <input class="form-control" type="text" id="r" readonly placeholder="泵截面积"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="s">杆加权截面积</label>
+                <input class="form-control" type="text" id="s" readonly placeholder="杆加权截面积"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="t">油管截面积</label>
+                <input class="form-control" type="text" id="t" readonly placeholder="油管截面积"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="u">重力加速度</label>
+                <input class="form-control" type="text" id="u" readonly value="9.8" placeholder="重力加速度"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="v">钢重度</label>
+                <input class="form-control" type="text" id="v" readonly value="0.85" placeholder="钢重度"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="w">混合液重度</label>
+                <input class="form-control" type="text" id="w" readonly value="9617" placeholder="混合液重度"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="x">杆自重λ1</label>
+                <input class="form-control" type="text" id="x" readonly placeholder="杆自重λ1"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="y">液柱重λ2</label>
+                <input class="form-control" type="text" id="y" readonly placeholder="液柱重λ2"/>
+            </div>
+            <div class="list-group-item hide">
+                <label for="z">惯性λ3</label>
+                <input class="form-control" type="text" id="z" readonly placeholder="惯性λ3"/>
+            </div>
+        </div>
+        <div class="list-group-item col-xs-3">
+            <div class="list-group-item">
+                <button class="btn btn-default" id="calc-btn">计算</button>
+            </div>
+            <div class="list-group-item">
+                <label for="result">防冲距（m）</label>
+
+                <div id="result"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+
+        var calc = function () {
+            var inputArray = ['a','c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'result'];
+            var obj = {};
+            $.each(inputArray, function (i, n) {
+                var currVal = $.trim($('#' + n).val());
+                obj[n] = parseFloat(currVal);
+
+            });
+
+            obj.m = obj.g + obj.h + obj.i + obj.a;
+            obj.p = obj.n * (1 - obj.l) + obj.l;
+            obj.r = 3.14 / 4 * obj.c * obj.c / 1000000;
+            obj.s = 3.14 / 4 * (25 * 25 * obj.g + 22 * 22 * obj.h + 19 * 19 * obj.i + 38 * 38 * obj.a) / obj.m / 1000000;
+            obj.t = 3.14 / 4 * (obj.j * obj.j - obj.k * obj.k) / 1000000;
+            obj.v = obj.o * 1000 * obj.u;
+            obj.w = obj.p * 1000 * obj.u;
+			
+            obj.x = obj.w * obj.m * obj.d / obj.q;
+            obj.y = obj.r * obj.p * 1000 * obj.d * obj.u / obj.q * (obj.m / obj.s + obj.d / obj.t);
+            obj.z = obj.s * obj.o * 1000 * obj.m * obj.u * obj.e * obj.f * obj.f * obj.m / 1790 / obj.q / obj.s;
+            obj.result = obj.x + obj.y + obj.z;
+
+            var calcArray = ['m', 'p', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+            $.each(calcArray, function (i, n) {
+                $('#' + n).val(obj[n]);
+            });
+
+            $('#result').text(obj.result.toFixed(2));
+        }
+        $('#calc-btn').bind('click', calc);
+
+
+    });
+</script>
+</body>
+</html>
