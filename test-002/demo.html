@@ -40,7 +40,7 @@
        <script>
         $(function() {
           var $topLoader = $("#topLoader").percentageLoader({
-            width: 256, height: 256,value: 2000,totalValue:3000,valueText:"剩余天数"
+            width: 256, height: 256,value: 100,totalValue:365,valueText:"剩余天数"
           });
 
           var topLoaderRunning = false;
@@ -51,18 +51,18 @@
               }
               topLoaderRunning = true;
 
-              var kb = 2000;
+              var kb = 100;
               var animateFunc = function () {
-                kb -= 50;
-                $topLoader.percentageLoader({value: kb,totalValue:3000});
+                kb -= 1;
+                $topLoader.percentageLoader({value: kb,totalValue:365});
                 if (kb > 0) {
-                  setTimeout(animateFunc, 500);
+                  setTimeout(animateFunc, 100);
                 } else {
                   topLoaderRunning = false;
                 }
               };
 
-              setTimeout(animateFunc, 500);
+              setTimeout(animateFunc, 100);
             });
 
           }});
