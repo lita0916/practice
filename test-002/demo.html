@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="../../percentageloader/src/jquery.percentageloader-0.3.js"></script>
+
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      
+      #topLoader {
+        width: 256px;
+        height: 256px;
+        margin-bottom: 32px;
+      }
+      
+      #container {
+        width: 940px;
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      #animateButton {
+        width: 256px;
+      }
+    </style>
+  
+  </head>
+  <body>
+    <div id="container">
+      <div id="topLoader">      
+      </div>
+      
+      <button id="animateButton">Animate Loader</button>
+      
+       <script>
+        $(function() {
+          var $topLoader = $("#topLoader").percentageLoader({
+            width: 256, height: 256,value: 2000,totalValue:3000,valueText:"剩余天数"
+          });
+
+          var topLoaderRunning = false;
+          $topLoader.percentageLoader({onready: function () {
+            $("#animateButton").click(function () {
+              if (topLoaderRunning) {
+                return;
+              }
+              topLoaderRunning = true;
+
+              var kb = 1050;
+              var animateFunc = function () {
+                kb -= 50;
+                $topLoader.percentageLoader({value: kb,totalValue:3000});
+                if (kb > 0) {
+                  setTimeout(animateFunc, 500);
+                } else {
+                  topLoaderRunning = false;
+                }
+              };
+
+              setTimeout(animateFunc, 500);
+            });
+
+          }});
+        });
+      </script>
+    </div>
+     
+  </body>
+</html>
